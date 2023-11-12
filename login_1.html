@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="jp">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ログイン画面</title>
+
+    <script>
+        function move(){
+            window.location.href = "遷移先リンク（新規登録ボタン）";
+        }
+    </script>
+
+    <style>
+        .login_canvas{
+            margin-top: -23vh;
+            margin-left: 5vw;
+        }
+
+        /*スマートフォン用*/
+        @media only screen and (max-width: 600px){
+            .login_canvas{
+            margin-top: 10vh;
+            margin-left: 5vw;
+        }
+        }
+    </style>
+</head>
+<body style="background-color: rgb(233, 233, 233);">
+
+    <form action="処理先のリンク" method="post">
+        <div id="login_canvas" class="login_canvas" style="position: relative; width: 90vw; height: 90vw; background-color: rgb(233, 233, 233); margin-top: 10vh;">
+            <div style="position: relative; width: 100%; height: 60%; background-color: white; top: 20%; border: 10px;">
+                <div style="position: relative; width: 100%; height: 60%; background-color: white; top: 20%;">
+                    <div style="position: absolute; font-size: 3vw; font-weight: bold; top: 31%; left: 18%;">ID</div>
+                    <div style="position: absolute; font-weight: bold; top: 30%; left: 25%; width: 45%; height: 10%;"> <input type="text" name="userid" style="width: 100%; height: 100%; border-radius: 1vw; font-size: 3vw; border: 1px solid rgb(174, 172, 172); box-shadow: 1px 0 5px rgb(174, 172, 172);"/></div>
+
+                    <div style="position: absolute; font-size: 3vw; font-weight: bold; top: 61%; left: 5%;">パスワード</div>
+                    <div style="position: absolute; font-weight: bold; top: 62%; left: 25%; width: 45%; height: 10%;"> <input type="password" name="userid" style="width: 100%; height: 100%; border-radius: 1vw; font-size: 3vw; border: 1px solid rgb(174, 172, 172); box-shadow: 1px 0 5px rgb(174, 172, 172);"/></div>
+                </div>
+
+                <!--マウスが乗ったら大きくなる-->
+                <div style="position: absolute; width: 55%; height: 100%; background-color: red; top: 0%; left: 74%; border-radius: 100% 0% 0% 100%; box-shadow: 1px 0 8px red;" onclick="move()" onmouseover="this.style.left='70%'; document.getElementById('new_regi_text').style.left='74%'; document.getElementById('new_regi_text').style.color='black'" onmouseout="this.style.left='74%'; document.getElementById('new_regi_text').style.left='78%'; document.getElementById('new_regi_text').style.color='white'"></div>
+
+                <!--半円の中の新規登録ボタン-->
+                <div id="new_regi_text" style="position: absolute; font-size: 4vw; font-weight: bold; color: white; top: 45%; left: 78%;" onclick="move()">新規登録</div>
+
+                <!--丸のはみ出た部分を隠す-->
+                <div style="position: absolute; width: 55%; height: 110%; background-color: rgb(233, 233, 233); top: -5%; left: 100%;"></div>
+
+                <div style="position: absolute; font-size: 4vw; font-weight: bold; color: black; left: 35%; top: 15%;">ログイン画面</div>
+
+                <div id="login_div" style="position: absolute; width: 30%; height: 15%; left: 35%; top: 75%;">
+                    <input type="submit" name="login" value="ログイン" style="width: 100%; height: 100%; font-size: 3vw; font-weight: bold; color: white; background-color: rgb(1, 190, 190); border: none; border-radius: 50%; box-shadow: 1px 0 5px rgb(1, 190, 190);" onmouseover="document.getElementById('login_div').style.width='31%'; document.getElementById('login_div').style.height='16%'; this.style.color='black'" onmouseout="document.getElementById('login_div').style.width='30%'; document.getElementById('login_div').style.height='15%'; this.style.color='white'"/>
+                </div>
+            </div>
+        </div>
+    </form>
+</body>
+</html>
